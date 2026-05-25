@@ -84,13 +84,12 @@
     const { useState } = React;
 
     // ============================================================
-    // EDIT LINKS HERE — replace "#" with real URLs when ready.
+    // EDIT LINKS HERE. Replace "#" with real URLs when ready.
     // ============================================================
     const LINKS = {
       // Final Week (Today)
       finalSlides:     "https://docs.google.com/presentation/d/1PPzYi8bUvtvYL6Kg4tmbYyuC0GPmjsnNqWlPJXkiQpw/edit?usp=sharing",
-      finalHandout:    "Popular%20AI%20Tools(Final%20Week).pdf",
-      classRecording:  "#",
+      classRecording:  "https://drive.google.com/file/d/1bGiUSuq9CjLQuV0X1ZC0wiCptvKzG5_b/view?usp=sharing",
 
       // Week 1
       week1Slides:  "#",
@@ -309,13 +308,12 @@
             </p>
 
             <div className="bg-white rounded-3xl shadow-soft border border-ink-900/5 p-5 sm:p-8">
-              <div className="grid sm:grid-cols-3 gap-3 sm:gap-4">
+              <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
                 <MaterialLink href={LINKS.finalSlides}>Presentation Slides</MaterialLink>
-                <MaterialLink href={LINKS.finalHandout}>Popular AI Tools Handout</MaterialLink>
                 <MaterialLink href={LINKS.classRecording} highlight>Class Recording</MaterialLink>
               </div>
               <p className="mt-5 text-sm text-ink-500">
-                The class recording is highlighted — it’s the only recorded session in this series so far.
+                The class recording is highlighted. It’s the only recorded session in this series so far.
               </p>
             </div>
           </Section>
