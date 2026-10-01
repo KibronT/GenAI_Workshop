@@ -222,6 +222,67 @@
       color: var(--text-muted);
     }
 
+    /* ---------- Popular LLMs ---------- */
+    .llms {
+      background: var(--blue-gray);
+      border-top: 1px solid var(--border);
+      padding: 32px 0 36px;
+    }
+
+    .llms h2 {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 18px;
+    }
+
+    .llm-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px 24px;
+    }
+
+    .llm-list li {
+      border-left: 2px solid var(--blue);
+      padding-left: 12px;
+      line-height: 1.35;
+    }
+
+    .llm-list a {
+      color: var(--navy);
+      font-weight: 600;
+      font-size: 1.0625rem;
+      text-decoration: underline;
+      text-decoration-color: var(--blue);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .llm-list a::after {
+      content: " ↗";
+      color: var(--blue);
+      font-size: 0.875em;
+    }
+
+    .llm-list a:hover {
+      color: var(--blue);
+      text-decoration-thickness: 2px;
+    }
+
+    .llm-list a:focus-visible {
+      outline: 2px solid var(--navy);
+      outline-offset: 2px;
+    }
+
+    .llm-maker {
+      display: block;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
     /* ---------- Footer ---------- */
     footer {
       background: var(--navy);
@@ -239,6 +300,7 @@
       .closing { padding: 0 0 56px; }
       .week-card { padding: 20px; }
       .resources { grid-template-columns: 1fr; }
+      .llm-list { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
@@ -319,6 +381,31 @@
         If you have any questions about the workshop or any of the materials, feel free to reach out.
         New materials and recordings will be added here as they become available.
       </p>
+    </div>
+  </section>
+
+  <!-- ==================== POPULAR LLMS ==================== -->
+  <section class="llms">
+    <div class="container">
+      <h2>Popular LLMs</h2>
+      <ul class="llm-list">
+        <li>
+          <a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">ChatGPT</a>
+          <span class="llm-maker">OpenAI</span>
+        </li>
+        <li>
+          <a href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer">Gemini</a>
+          <span class="llm-maker">Google</span>
+        </li>
+        <li>
+          <a href="https://claude.ai/" target="_blank" rel="noopener noreferrer">Claude</a>
+          <span class="llm-maker">Anthropic</span>
+        </li>
+        <li>
+          <a href="https://copilot.microsoft.com/" target="_blank" rel="noopener noreferrer">Microsoft Copilot</a>
+          <span class="llm-maker">Microsoft</span>
+        </li>
+      </ul>
     </div>
   </section>
 
