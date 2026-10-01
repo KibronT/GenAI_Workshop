@@ -3,465 +3,326 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Generative AI Literacy Workshop Materials</title>
-  <meta name="description" content="Slides, handouts, demo guides, and recordings from our generative AI literacy workshop series." />
+  <title>Generative AI Literacy Workshop · Fall 2026</title>
+  <meta name="description" content="Slides, handouts, and class recordings from the Fall 2026 Generative AI Literacy Workshop." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            cream: {
-              50:  '#fefbf6',
-              100: '#fdf6ec',
-              200: '#f9ecd5',
-            },
-            amber: {
-              warm: '#e58a3a',
-              deep: '#c2410c',
-            },
-            ink: {
-              900: '#2b1d11',
-              700: '#4a3622',
-              500: '#6b513a',
-            }
-          },
-          fontFamily: {
-            display: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-            body: ['Inter', 'system-ui', 'sans-serif'],
-          },
-          boxShadow: {
-            soft: '0 4px 20px -6px rgba(120, 70, 20, 0.10)',
-            softer: '0 2px 10px -4px rgba(120, 70, 20, 0.08)',
-            lift: '0 12px 30px -10px rgba(194, 65, 12, 0.25)',
-          }
-        }
-      }
-    }
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --cream-50: #fefbf6;
+      --cream-100: #fdf6ec;
+      --cream-200: #f9ecd5;
+      --orange: #e58a3a;
+      --orange-deep: #c2410c;
+      --orange-hover: #a8350a;
+      --ink-900: #2b1d11;
+      --ink-700: #4a3622;
+      --ink-500: #6b513a;
+      --border: rgba(43, 29, 17, 0.07);
+      --shadow-soft: 0 4px 20px -6px rgba(120, 70, 20, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
     html { scroll-behavior: smooth; }
+
     body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background-color: #fefbf6;
-      color: #2b1d11;
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--cream-50);
+      color: var(--ink-900);
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
-    h1, h2, h3, h4 { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
-    .bg-warm-gradient {
+
+    h1, h2, h3 {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
       background:
         radial-gradient(circle at 15% 10%, rgba(229, 138, 58, 0.18), transparent 50%),
         radial-gradient(circle at 90% 0%, rgba(194, 65, 12, 0.12), transparent 45%),
-        linear-gradient(180deg, #fefbf6 0%, #fdf6ec 100%);
+        linear-gradient(180deg, var(--cream-50) 0%, var(--cream-100) 100%);
+      padding: 72px 0 64px;
     }
-    .bg-survey {
-      background:
-        radial-gradient(circle at 0% 50%, rgba(229, 138, 58, 0.22), transparent 55%),
-        radial-gradient(circle at 100% 50%, rgba(194, 65, 12, 0.18), transparent 55%),
-        #fdf6ec;
+
+    .badge {
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(194, 65, 12, 0.15);
+      color: var(--orange-deep);
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 20px;
     }
-    .focus-ring:focus-visible {
-      outline: 2px solid #c2410c;
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      margin: 18px 0 0;
+      max-width: 640px;
+      font-size: 1.125rem;
+      color: var(--ink-700);
+    }
+
+    /* ---------- Materials ---------- */
+    .materials {
+      padding: 56px 0 72px;
+    }
+
+    .section-kicker {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--orange-deep);
+      margin-bottom: 6px;
+    }
+
+    .materials > .container > h2 {
+      font-size: clamp(1.5rem, 3.5vw, 2rem);
+      font-weight: 700;
+      margin-bottom: 28px;
+    }
+
+    .week-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .week-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow-soft);
+      padding: 24px;
+    }
+
+    .week-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 4px 14px;
+      margin-bottom: 18px;
+    }
+
+    .week-header h3 {
+      font-size: 1.375rem;
+      font-weight: 700;
+    }
+
+    .week-date {
+      color: var(--ink-500);
+      font-weight: 500;
+    }
+
+    .resources {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .resource {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 18px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: var(--cream-100);
+      color: var(--ink-900);
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.15s ease, transform 0.15s ease;
+    }
+
+    a.resource:hover {
+      background: var(--cream-200);
+    }
+
+    a.resource:hover .resource-arrow {
+      transform: translateX(2px);
+    }
+
+    a.resource:focus-visible {
+      outline: 2px solid var(--orange-deep);
       outline-offset: 3px;
-      border-radius: 12px;
+    }
+
+    .resource-arrow {
+      color: var(--orange-deep);
+      transition: transform 0.15s ease;
+    }
+
+    /* Unavailable resource: same shape, muted, not clickable */
+    .resource.coming-soon {
+      background: transparent;
+      border-style: dashed;
+      border-color: rgba(43, 29, 17, 0.18);
+      color: var(--ink-500);
+      cursor: default;
+    }
+
+    .coming-soon-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--ink-500);
+      background: var(--cream-100);
+      padding: 2px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    /* ---------- Closing ---------- */
+    .closing {
+      padding: 8px 0 80px;
+      text-align: center;
+    }
+
+    .closing-accent {
+      width: 48px;
+      height: 4px;
+      margin: 0 auto 24px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--orange), var(--orange-deep));
+    }
+
+    .closing h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .closing p {
+      margin: 10px auto 0;
+      max-width: 560px;
+      color: var(--ink-700);
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      border-top: 1px solid rgba(43, 29, 17, 0.1);
+      background: var(--cream-100);
+      padding: 20px 0;
+      text-align: center;
+      font-size: 0.875rem;
+      color: var(--ink-500);
+    }
+
+    /* ---------- Mobile ---------- */
+    @media (max-width: 720px) {
+      .hero { padding: 48px 0 44px; }
+      .hero p { font-size: 1.0625rem; }
+      .materials { padding: 40px 0 56px; }
+      .closing { padding: 0 0 56px; }
+      .week-card { padding: 20px; border-radius: 20px; }
+      .resources { grid-template-columns: 1fr; }
     }
   </style>
-
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
-  <div id="root"></div>
 
-  <script type="text/babel" data-presets="react">
-    const { useState } = React;
+  <!-- ==================== INTRODUCTION ==================== -->
+  <header class="hero">
+    <div class="container">
+      <div class="badge">Workshop Series · Fall 2026</div>
+      <h1>Generative AI Literacy Workshop</h1>
+      <p>
+        This page has the presentation slides, handouts, and class recordings from each week of the workshop.
+        Use it to review what we covered or catch up on a class you missed.
+      </p>
+    </div>
+  </header>
 
-    // ============================================================
-    // EDIT LINKS HERE. Replace "#" with real URLs when ready.
-    // ============================================================
-    const LINKS = {
-      // Final Week (Today)
-      finalSlides:     "https://docs.google.com/presentation/d/1PPzYi8bUvtvYL6Kg4tmbYyuC0GPmjsnNqWlPJXkiQpw/edit?usp=sharing",
-      finalHandout:    "https://docs.google.com/document/d/1bz-vcCOW5VJ54lhTMtk-d6qm-daVGZBPj8QLYq4t3Lg/edit?usp=sharing",
-      classRecording:  "https://drive.google.com/file/d/1bGiUSuq9CjLQuV0X1ZC0wiCptvKzG5_b/view?usp=sharing",
+  <!-- ==================== WORKSHOP MATERIALS ==================== -->
+  <main class="materials">
+    <div class="container">
+      <div class="section-kicker">By Week</div>
+      <h2>Workshop Materials</h2>
 
-      // Week 1
-      week1Slides:  "#",
-      week1Handout: "#",
+      <!--
+        HOW TO ADD A NEW WEEK:
+        1. Copy one entire <article class="week-card"> ... </article> block.
+        2. Paste it where it should appear in the list and update the week number and date.
+        3. For each resource:
+           - Available:   <a class="resource" href="LINK" target="_blank" rel="noopener noreferrer">
+                            <span>Label</span><span class="resource-arrow" aria-hidden="true">→</span></a>
+           - Not ready:   <span class="resource coming-soon" aria-disabled="true">
+                            <span>Label</span><span class="coming-soon-tag">Coming Soon</span></span>
+      -->
+      <div class="week-list">
 
-      // Week 2
-      week2Slides:  "#",
-      week2Handout: "#",
+        <!-- ===== WEEK 1 ===== -->
+        <article class="week-card">
+          <div class="week-header">
+            <h3>Week 1</h3>
+            <span class="week-date">Monday, September 21, 2026</span>
+          </div>
+          <div class="resources">
+            <a class="resource" href="https://docs.google.com/presentation/d/1Gc_ZCgb4yCrl9Oqv-rmr8P2Jq_Klqg4A9FkY6EWwmoc/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <span>Presentation Slides</span><span class="resource-arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
 
-      // Week 3
-      week3Slides:  "#",
-      week3Handout: "#",
-
-      // Survey
-      survey: "https://docs.google.com/forms/d/e/1FAIpQLSe4AJXjZM6GIN3-JRqqWXaH9EW21fM5U-Pk5fETc4x6NKiAJA/viewform?usp=sharing&ouid=108452824275498195744",
-    };
-
-    // Swap this with a real QR code image URL when ready.
-    const QR_CODE_IMAGE = "qrcode_docs.google.com.png";
-    // ============================================================
-
-    const WEEKS = [
-      {
-        title: "Week 1: Introduction to Generative AI",
-        description:
-          "An introduction to what generative AI is, what it can do, and how to start using it thoughtfully.",
-        links: [
-          { label: "Presentation Slides", href: LINKS.week1Slides },
-          { label: "Handout / Demo Guide", href: LINKS.week1Handout },
-        ],
-      },
-      {
-        title: "Week 2: Perception",
-        description:
-          "A session on how AI takes in information like text, images, and audio, and turns it into something it can use.",
-        links: [
-          { label: "Presentation Slides", href: LINKS.week2Slides },
-          { label: "Handout / Demo Guide", href: LINKS.week2Handout },
-        ],
-      },
-      {
-        title: "Week 3: Representation & Reasoning",
-        description:
-          "A session on how AI stores information, simplifies it, and uses patterns to make predictions or responses.",
-        links: [
-          { label: "Presentation Slides", href: LINKS.week3Slides },
-          { label: "Handout / Definitions", href: LINKS.week3Handout },
-        ],
-      },
-    ];
-
-    const TOOLS = [
-      {
-        name: "ChatGPT",
-        maker: "OpenAI",
-        description:
-          "General AI assistant for writing, brainstorming, explaining, summarizing, translating, working with files and images, and everyday help.",
-      },
-      {
-        name: "NotebookLM",
-        maker: "Google",
-        description:
-          "Works with sources you upload, like PDFs, notes, websites, and class materials. Best for studying and source-based work.",
-      },
-      {
-        name: "Gemini",
-        maker: "Google",
-        description:
-          "General AI assistant connected to Google tools like Gmail, Docs, Drive, Chrome, and Android.",
-      },
-      {
-        name: "Microsoft Copilot",
-        maker: "Microsoft",
-        description:
-          "AI assistant built around Word, Excel, PowerPoint, Outlook, Teams, and Microsoft 365.",
-      },
-      {
-        name: "Claude",
-        maker: "Anthropic",
-        description:
-          "Good for writing, summarizing, long documents, careful explanations, coding help, and detailed information.",
-      },
-      {
-        name: "Perplexity",
-        maker: "Perplexity AI",
-        description:
-          "General AI assistant and answer engine that searches the web and gives answers with sources. Good for current information and research.",
-      },
-    ];
-
-    // ----- Reusable bits -----
-
-    // Any link whose href doesn't start with "#" is treated as external
-    // and opens in a new tab with safe rel attributes.
-    function externalProps(href) {
-      const isInternal = typeof href === "string" && href.startsWith("#");
-      return isInternal ? {} : { target: "_blank", rel: "noopener noreferrer" };
-    }
-
-    function PrimaryButton({ href, children, large = false }) {
-      const size = large ? "px-7 py-4 text-base sm:text-lg" : "px-6 py-3 text-base";
-      return (
-        <a
-          href={href}
-          {...externalProps(href)}
-          className={`inline-flex items-center justify-center gap-2 ${size} font-semibold text-white bg-amber-deep hover:bg-[#a8350a] active:bg-[#8e2c08] rounded-2xl shadow-lift transition-colors focus-ring`}
-        >
-          {children}
-        </a>
-      );
-    }
-
-    function SecondaryButton({ href, children }) {
-      return (
-        <a
-          href={href}
-          {...externalProps(href)}
-          className="inline-flex items-center justify-center gap-2 px-6 py-3 text-base font-semibold text-amber-deep bg-white border-2 border-amber-deep/20 hover:border-amber-deep/40 hover:bg-cream-100 rounded-2xl shadow-softer transition-colors focus-ring"
-        >
-          {children}
-        </a>
-      );
-    }
-
-    function MaterialLink({ href, children, highlight = false }) {
-      if (highlight) {
-        return (
-          <a
-            href={href}
-            {...externalProps(href)}
-            className="group flex items-center justify-between gap-3 px-5 py-4 rounded-2xl bg-amber-deep text-white font-semibold shadow-lift hover:bg-[#a8350a] transition-colors focus-ring"
-          >
-            <span className="flex items-center gap-3">
-              <span className="text-xl" aria-hidden="true">▶</span>
-              <span>{children}</span>
+        <!-- ===== WEEK 2 ===== -->
+        <article class="week-card">
+          <div class="week-header">
+            <h3>Week 2</h3>
+            <span class="week-date">Monday, September 28, 2026</span>
+          </div>
+          <div class="resources">
+            <a class="resource" href="https://docs.google.com/presentation/d/19Q_oZjPDDAAsRAuQO66VXjJjTgmzupWpS-ZScOKWZQs/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <span>Presentation Slides</span><span class="resource-arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="resource" href="https://drive.google.com/file/d/1c-XvRluv34aGjfTSFcTN-KM4klNTIIrF/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <span>Handout</span><span class="resource-arrow" aria-hidden="true">→</span>
+            </a>
+            <span class="resource coming-soon" aria-disabled="true">
+              <span>Class Recording</span><span class="coming-soon-tag">Coming Soon</span>
             </span>
-            <span className="opacity-80 group-hover:translate-x-0.5 transition-transform" aria-hidden="true">→</span>
-          </a>
-        );
-      }
-      return (
-        <a
-          href={href}
-          {...externalProps(href)}
-          className="group flex items-center justify-between gap-3 px-5 py-4 rounded-2xl bg-cream-100 hover:bg-cream-200 text-ink-900 font-medium border border-ink-900/5 transition-colors focus-ring"
-        >
-          <span>{children}</span>
-          <span className="text-amber-deep group-hover:translate-x-0.5 transition-transform" aria-hidden="true">→</span>
-        </a>
-      );
-    }
+          </div>
+        </article>
 
-    function Section({ id, children, className = "" }) {
-      return (
-        <section id={id} className={`px-5 sm:px-8 py-14 sm:py-20 ${className}`}>
-          <div className="max-w-5xl mx-auto">{children}</div>
-        </section>
-      );
-    }
+      </div>
+    </div>
+  </main>
 
-    function SectionTitle({ kicker, children }) {
-      return (
-        <div className="mb-8 sm:mb-10">
-          {kicker && (
-            <div className="text-sm font-semibold tracking-wide uppercase text-amber-deep mb-2">
-              {kicker}
-            </div>
-          )}
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-ink-900 leading-tight">
-            {children}
-          </h2>
-        </div>
-      );
-    }
+  <!-- ==================== CLOSING ==================== -->
+  <section class="closing">
+    <div class="container">
+      <div class="closing-accent" aria-hidden="true"></div>
+      <h2>Questions?</h2>
+      <p>
+        If you have any questions about the workshop or any of the materials, feel free to reach out.
+        New materials and recordings will be added here as they become available.
+      </p>
+    </div>
+  </section>
 
-    // ----- Page -----
+  <footer>
+    <div class="container">Generative AI Literacy Workshop · Fall 2026</div>
+  </footer>
 
-    function App() {
-      return (
-        <div className="min-h-screen">
-          {/* HERO */}
-          <header className="bg-warm-gradient">
-            <div className="max-w-5xl mx-auto px-5 sm:px-8 pt-12 sm:pt-20 pb-16 sm:pb-24">
-              <div className="inline-block px-3 py-1 rounded-full bg-white/70 backdrop-blur-sm border border-amber-deep/15 text-xs sm:text-sm font-semibold text-amber-deep mb-6">
-                Workshop Series · Spring 2026
-              </div>
-              <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-ink-900 leading-tight tracking-tight">
-                Generative AI Literacy Workshop Materials
-              </h1>
-              <p className="mt-5 text-lg sm:text-xl text-ink-700 max-w-3xl leading-relaxed">
-                Slides, handouts, demo guides, and recordings from our AI literacy workshop series.
-              </p>
-              <p className="mt-3 text-base sm:text-lg text-ink-500 max-w-3xl leading-relaxed">
-                Use this page to review what we covered, download materials, and share feedback for future virtual classes.
-              </p>
-              <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <PrimaryButton href="#today" large>
-                  View Today’s Materials
-                </PrimaryButton>
-                <SecondaryButton href="#feedback">
-                  Share Feedback
-                </SecondaryButton>
-              </div>
-            </div>
-          </header>
-
-          {/* TODAY'S MATERIALS */}
-          <Section id="today" className="bg-cream-50">
-            <SectionTitle kicker="Today · May 24, 2026">
-              Final Week: Learning, Natural Interaction, and Societal Impact
-            </SectionTitle>
-            <p className="text-base sm:text-lg text-ink-700 leading-relaxed max-w-3xl mb-8">
-              In our final session, we looked at how generative AI learns from data, how it interacts through
-              language, and how it affects real communities through issues like fairness, privacy, jobs,
-              misinformation, and data centers.
-            </p>
-
-            <div className="bg-white rounded-3xl shadow-soft border border-ink-900/5 p-5 sm:p-8">
-              <div className="grid sm:grid-cols-3 gap-3 sm:gap-4">
-                <MaterialLink href={LINKS.finalSlides}>Presentation Slides</MaterialLink>
-                <MaterialLink href={LINKS.finalHandout}>Popular AI Tools Handout</MaterialLink>
-                <MaterialLink href={LINKS.classRecording} highlight>Class Recording</MaterialLink>
-              </div>
-              <p className="mt-5 text-sm text-ink-500">
-                The class recording is highlighted. It’s the only recorded session in this series so far.
-              </p>
-            </div>
-          </Section>
-
-          {/* SURVEY / FEEDBACK */}
-          <Section id="feedback" className="bg-survey">
-            <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-soft border border-amber-deep/10 p-6 sm:p-10">
-              <SectionTitle kicker="Future Classes">Help Shape Future AI Classes</SectionTitle>
-
-              <div className="grid md:grid-cols-[1fr,auto] gap-8 items-center">
-                <div>
-                  <p className="text-base sm:text-lg text-ink-700 leading-relaxed">
-                    We are planning a similar generative AI class series in a virtual format. It will likely
-                    be around six sessions and will cover many of the same ideas from this workshop, with
-                    more time for demos, practice, and questions.
-                  </p>
-                  <p className="mt-4 text-base sm:text-lg text-ink-700 leading-relaxed">
-                    Please fill out the survey to let us know what topics you want to learn more about, what
-                    tools you want to practice, and what would make future classes more useful.
-                  </p>
-                  <div className="mt-7">
-                    <PrimaryButton href={LINKS.survey} large>
-                      Complete the Survey
-                    </PrimaryButton>
-                  </div>
-                </div>
-
-                <div className="flex flex-col items-center">
-                  {QR_CODE_IMAGE ? (
-                    <>
-                      <a
-                        href={LINKS.survey}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block rounded-2xl bg-white p-3 shadow-softer border border-ink-900/5 hover:shadow-soft transition-shadow focus-ring"
-                      >
-                        <img
-                          src={QR_CODE_IMAGE}
-                          alt="QR code linking to the future AI class interest survey"
-                          className="w-48 h-48 sm:w-52 sm:h-52 object-contain"
-                        />
-                      </a>
-                      <p className="mt-3 text-xs font-semibold text-ink-700 text-center max-w-[13rem]">
-                        Scan to open the survey
-                      </p>
-                    </>
-                  ) : (
-                    <div className="w-44 h-44 sm:w-48 sm:h-48 rounded-2xl border-2 border-dashed border-amber-deep/40 bg-cream-50 flex items-center justify-center text-center p-4">
-                      <span className="text-sm font-semibold text-amber-deep leading-snug">
-                        QR Code<br />Coming Soon
-                      </span>
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
-          </Section>
-
-          {/* PREVIOUS WEEKS */}
-          <Section id="previous">
-            <SectionTitle kicker="Archive">Previous Workshop Materials</SectionTitle>
-
-            <div className="grid md:grid-cols-3 gap-5">
-              {WEEKS.map((week) => (
-                <div
-                  key={week.title}
-                  className="bg-white rounded-3xl shadow-softer border border-ink-900/5 p-6 flex flex-col"
-                >
-                  <h3 className="text-lg sm:text-xl font-bold text-ink-900 leading-snug">
-                    {week.title}
-                  </h3>
-                  <p className="mt-3 text-ink-700 leading-relaxed text-sm sm:text-base flex-grow">
-                    {week.description}
-                  </p>
-                  <div className="mt-5 flex flex-col gap-2">
-                    {week.links.map((l) => (
-                      <a
-                        key={l.label}
-                        href={l.href}
-                        {...externalProps(l.href)}
-                        className="inline-flex items-center justify-between gap-2 px-4 py-3 rounded-xl bg-cream-100 hover:bg-cream-200 text-ink-900 text-sm font-semibold border border-ink-900/5 transition-colors focus-ring"
-                      >
-                        <span>{l.label}</span>
-                        <span className="text-amber-deep" aria-hidden="true">→</span>
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <p className="mt-6 text-sm text-ink-500 italic">
-              Note: Previous workshop materials are still being organized and will be added here shortly. Please check back soon for the slides and handouts from earlier sessions.
-            </p>
-          </Section>
-
-          {/* TOOLS */}
-          <Section id="tools" className="bg-cream-50">
-            <SectionTitle kicker="Toolbox">Popular AI Tools Mentioned</SectionTitle>
-
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-              {TOOLS.map((tool) => (
-                <div
-                  key={tool.name}
-                  className="bg-white rounded-2xl shadow-softer border border-ink-900/5 p-5 flex flex-col"
-                >
-                  <div className="flex items-baseline justify-between gap-3">
-                    <h3 className="text-lg font-bold text-ink-900">{tool.name}</h3>
-                    <span className="text-xs font-semibold text-amber-deep uppercase tracking-wide">
-                      {tool.maker}
-                    </span>
-                  </div>
-                  <p className="mt-3 text-sm text-ink-700 leading-relaxed">
-                    {tool.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </Section>
-
-          {/* CLOSING */}
-          <Section id="closing">
-            <div className="max-w-3xl mx-auto text-center">
-              <div className="inline-block px-4 py-1.5 rounded-full bg-cream-100 border border-amber-deep/15 text-xs font-semibold text-amber-deep uppercase tracking-wide mb-5">
-                Thank You
-              </div>
-              <p className="text-lg sm:text-xl text-ink-700 leading-relaxed">
-                Thank you for being part of the workshop series. The goal is not to know everything about AI,
-                but to feel more comfortable asking questions, checking important answers, and using these
-                tools carefully and creatively.
-              </p>
-            </div>
-          </Section>
-
-          {/* FOOTER */}
-          <footer className="border-t border-ink-900/10 bg-cream-100">
-            <div className="max-w-5xl mx-auto px-5 sm:px-8 py-6 text-center text-sm text-ink-500">
-              Generative AI Literacy Workshop Materials | 2026
-            </div>
-          </footer>
-        </div>
-      );
-    }
-
-    const root = ReactDOM.createRoot(document.getElementById('root'));
-    root.render(<App />);
-  </script>
 </body>
 </html>
